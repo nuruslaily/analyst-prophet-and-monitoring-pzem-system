@@ -21,7 +21,7 @@ export const QosOption = createContext([])
 // ];
 
 const dataMqtt = {
-    host: 'http://168.138.160.59/',
+    host: '168.138.160.59',
     clientId: '',
     port: 1883, // untuk port emqx: 8083, mosquitto: 8081/8080, hivemq: 8000
     username: 'guest',
@@ -43,7 +43,7 @@ const App = () => {
 
     const mqttConnect = () => {
         const { host, clientId, port, username, password } = dataMqtt;
-        const url = `tcp://${host}:${port}`;
+        const url = `wss://${host}:${port}`;
         const options = {
             keepalive: 30,
             protocolId: 'MQTT',
