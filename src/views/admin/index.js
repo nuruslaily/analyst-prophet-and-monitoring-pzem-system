@@ -43,7 +43,7 @@ const App = () => {
 
     const mqttConnect = () => {
         const { host, clientId, port, username, password } = dataMqtt;
-        const url = `wss://${host}:${port}/mqtt`;
+        const url = `tcp://${host}:${port}/mqtt`;
         const options = {
             keepalive: 30,
             protocolId: 'MQTT',
