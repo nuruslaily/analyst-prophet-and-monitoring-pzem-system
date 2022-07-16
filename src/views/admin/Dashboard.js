@@ -4,9 +4,9 @@ import LineChart from "components/Cards/LineChart"
 import Table from "components/Cards/Table";
 
 const dataMqtt = {
-  host: 'broker.emqx.io',
+  host: '168.138.160.59',
   clientId: 'esp32-PZEMclient-skripsi',
-  port: 8083, // untuk port emqx: 8083, mosquitto: 8081/8080, hivemq: 8000
+  port: 1883, // untuk port emqx: 8083, mosquitto: 8081/8080, hivemq: 8000
   username: 'skripsiPZEM',
   password: 'nurus123'
 }
@@ -26,7 +26,7 @@ export default function Dashboard() {
 
   const mqttConnect = () => {
     const { host, clientId, port, username, password } = dataMqtt;
-    const url = `ws://${host}:${port}/mqtt`;
+    const url = `tcp://${host}:${port}`;
     const options = {
       keepalive: 30,
       protocolId: 'MQTT',
