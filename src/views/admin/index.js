@@ -23,7 +23,7 @@ export const QosOption = createContext([])
 const dataMqtt = {
     host: 'broker.emqx.io',
     clientId: '',
-    port: 8083, // untuk port emqx: 8083, mosquitto: 8081/8080, hivemq: 8000
+    port: 8084, // untuk port emqx: 8083, mosquitto: 8081/8080, hivemq: 8000
     username: '',
     password: ''
 }
