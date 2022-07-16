@@ -43,7 +43,7 @@ const App = () => {
 
     const mqttConnect = () => {
         const { host, clientId, port, username, password } = dataMqtt;
-        const url = `tcp://${host}:${port}/mqtt`;
+        const url = `tcp://${host}:${port}`;
         const options = {
             keepalive: 30,
             protocolId: 'MQTT',
@@ -99,7 +99,7 @@ const App = () => {
 
     const mqttPublish = () => {
         if (client) {
-            const { topic, qos, payload } = { topic: 'pzem/test', qos: 0, payload: randomInteger(1, 1000).toString() };
+            const { topic, qos, payload } = { topic: 'test', qos: 0, payload: randomInteger(1, 1000).toString() };
             client.publish(topic, payload, { qos }, error => {
                 if (error) {
                     console.log('Publish error: ', error);
@@ -110,7 +110,7 @@ const App = () => {
 
     const mqttSub = () => {
         if (client) {
-            const { topic, qos } = { topic: 'pzem/test', qos: 0 };
+            const { topic, qos } = { topic: 'test', qos: 0 };
             client.subscribe(topic, { qos }, (error) => {
                 if (error) {
                     console.log('Subscribe to topics error', error)
@@ -123,7 +123,7 @@ const App = () => {
 
     const mqttUnSub = () => {
         if (client) {
-            const { topic } = { topic: 'pzem/test' };
+            const { topic } = { topic: 'test' };
             client.unsubscribe(topic, error => {
                 if (error) {
                     console.log('Unsubscribe error', error)
